@@ -1,20 +1,24 @@
-# Dr. Crop — a diagnostic assistant for plant cultivation
+# Dr. Crop — The Intelligent Botanical Co-Pilot
 
 <img src="screenshots/00-hero.png" width="230" align="right" alt="Dr. Crop — The botanical AI">
 
-A mobile app that turns a photo and a few sentences into a solid plant
-diagnosis — grounded in a curated domain knowledge base.
-iOS and Android, German-language, subscription model.
+A next-generation mobile app transforming images into precise, actionable
+plant diagnoses. Powered by a curated expert knowledge base and advanced AI,
+it is built for scale and real-world impact. The system was architected,
+developed, and optimized with a relentless focus on scalable solutions, built
+from the ground up using coding agents for advanced code generation. My value
+lies in product-centric systems thinking, translating complex data into
+elegant UX, and driving iteration with measurable metrics. Code is the engine,
+and I am the navigator, leveraging powerful tools to engineer intelligent
+growth.
 
-**I'm Boris Stapelfeld.** I conceived this product, made every technical and
-commercial decision, and took it to testing readiness — **built with Claude
-Code as a tool, not hand-written.** That's stated openly because it's the
-truth, and because the commits would show it anyway. What I bring isn't
-typing code: it's the ability to think a product through, ask the right
-questions, refuse to take claims at face value, and keep measuring until the
-numbers hold up.
-
-This repository shows what that looks like, in concrete examples.
+The application delivers instant AI-driven analysis by pairing uploaded photos
+with symptom descriptions to generate precise diagnoses backed by in-depth,
+verified botanical articles. Beyond immediate problem-solving, it acts as a
+long-term monitor by generating historical records of every diagnosis to
+meticulously track plant health over time. This repository provides a
+comprehensive look into the codebases, API integrations, and core FlutterFlow
+components that make this botanical synthesis possible.
 
 ---
 
