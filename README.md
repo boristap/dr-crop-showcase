@@ -109,7 +109,8 @@ It immediately surfaced more: **191 facts that pointed back at their source**
 (phrasing that would have leaked into user-facing answers), 8,053 duplicates,
 11% of entries never translated.
 
-→ [How the quality assurance works](docs/quality-assurance.md)
+→ [How the quality assurance works](docs/quality-assurance.md) ·
+→ [Sample code](sample-code/)
 
 ### 3. I verify the solutions too — especially my own
 
