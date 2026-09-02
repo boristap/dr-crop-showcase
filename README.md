@@ -49,9 +49,34 @@ knowledge base, Firestore for user data and history.
 
 ---
 
-## Three things I'm proud of
+## Four things I'm proud of
 
-### 1. I halved the running costs — measured, not estimated
+### 1. I built the RAG pipeline as a fact store, not a text dump
+
+Most retrieval systems drop documents into a vector store and retrieve the
+nearest passages. This one distills every source document into **atomic,
+domain-tagged facts** first, and retrieves those.
+
+That moves work from retrieval time to build time: every retrieved line is a
+checkable claim instead of a paragraph carrying whatever surrounded it, and
+retrieval can be filtered by domain. The price is a build pipeline that has to
+be policed — which is exactly why the verification stack below exists.
+
+Three measurements shaped it, and two of them killed an assumption of mine:
+
+- **Retrieval was 70% of the cost**, not the model. Almost every cost
+  discussion about LLM apps starts at the model; here that would have
+  optimised the wrong 11%.
+- **The retrieval-size parameter barely works** — 17% between its smallest and
+  largest setting, with a hard floor. Knowing a lever is fake is worth as much
+  as finding a real one.
+- **Cross-lingual retrieval just worked.** Untranslated facts still produced
+  fluent, correct answers in the user's language — so a translation step I had
+  already built got deleted again.
+
+→ [How the pipeline is built and what it cost](docs/rag-pipeline.md)
+
+### 2. I halved the running costs — measured, not estimated
 
 "What does a user cost me?" isn't a question you can guess at. So I measured
 it: real API calls, real token counts.
@@ -80,7 +105,7 @@ four-message conversation half as much. Response time dropped from 5.5 to
 → [The full cost analysis](docs/cost-optimisation.md) ·
 → [The code](sample-code/wissensbedarf.js)
 
-### 2. I found a pipeline that was quietly producing bad data
+### 3. I found a pipeline that was quietly producing bad data
 
 A local processing chain turns a large document corpus into a searchable
 collection of facts. It had been running for weeks, apparently fine.
@@ -112,7 +137,7 @@ It immediately surfaced more: **191 facts that pointed back at their source**
 → [How the quality assurance works](docs/quality-assurance.md) ·
 → [Sample code](sample-code/)
 
-### 3. I verify the solutions too — especially my own
+### 4. I verify the solutions too — especially my own
 
 While building the safety mechanisms I found three bugs in *my own* checks,
 each one only because I measured instead of assuming:
